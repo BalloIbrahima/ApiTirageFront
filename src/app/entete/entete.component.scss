@@ -1,0 +1,13 @@
+.container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 10px;
+    margin: 0 5%;
+    border-bottom: solid;
+    border-color: #845EC2;
+}
+
+.menu{
+    display: grid;
+    grid-template-columns: auto auto;
+}
