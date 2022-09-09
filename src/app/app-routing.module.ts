@@ -14,7 +14,8 @@ const routes: Routes = [
   },
   {
     path:'',
-    redirectTo:"acceuil"
+    redirectTo:"acceuil",
+    pathMatch:'full'
   }
 ];
 
