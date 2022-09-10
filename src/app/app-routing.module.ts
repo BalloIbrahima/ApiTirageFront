@@ -26,7 +26,11 @@ const routes: Routes = [
   {
     path:"detailsliste",
     component:DetaillisteComponent
-  }
+  },
+  {
+    path:"**",
+    redirectTo:"acceuil",
+    pathMatch:'full'  }
 ];
 
 @NgModule({
