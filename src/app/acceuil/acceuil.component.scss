@@ -47,14 +47,17 @@
 
 
 .listeList{
+    display: grid;
     padding: 4%;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 2%;
+    row-gap: 14px;
 }
 
 .listeList > .list{
     height: 50px;
     background-color: #FFFFFF;
     border-radius: 10px;
-
 }
 
 
@@ -103,6 +106,23 @@
     display: none;
 }
 
+#libelleListe{
+    font-size: 25px;
+    margin: 5px;
+    font-weight: bold;
+}
+#nbrTirageListe{
+    margin: 5px;
+    font-size: 15px;
+}
+
+.list{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 ///////responsivite*
 /// 
 @media only screen and (max-width: 1220px) {
@@ -142,7 +162,50 @@
     }
 
     .left{
+        padding: 20px;
         height: 100%
     }
+
+    .nbrTirages{
+        border-right: solid;
+        border-color: #845EC2;
+        padding-right: 12px;    }
+
+    .nbrListes{
+        padding-left: 12px;    
+    }
+
+    .container{
+        display: block;
+        height: 85vh;
+    }
+
+    .listeList{
+        display: grid;
+        padding: 4%;
+        grid-template-columns: auto auto;
+        column-gap: 2%;
+        row-gap: 14px;
+    }
+
+    .InputSearch > input{
+        font-size: 15px;
+    }
+
+    
 }
 
+@media only screen and (max-width: 325px) {
+
+    .listeList{
+        display: grid;
+        padding: 4%;
+        grid-template-columns: auto;
+        column-gap: 2%;
+        row-gap: 14px;
+    }
+
+    .InputSearch > input{
+        font-size: 10px;
+    }
+}

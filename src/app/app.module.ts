@@ -15,6 +15,15 @@ import { MatButtonModule} from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { FormsModule } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
+import {MatTabsModule} from '@angular/material/tabs';
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ImportTireComponent } from './import-tire/import-tire.component';
+import { ChoisirTireComponent } from './choisir-tire/choisir-tire.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +32,9 @@ import { MatIconModule } from '@angular/material/icon';
     TirageComponent,
     DetailtirageComponent,
     DetaillisteComponent,
-    EnteteComponent
+    EnteteComponent,
+    ImportTireComponent,
+    ChoisirTireComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +44,12 @@ import { MatIconModule } from '@angular/material/icon';
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatGridListModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

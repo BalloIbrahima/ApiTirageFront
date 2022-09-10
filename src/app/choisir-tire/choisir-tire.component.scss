@@ -1,0 +1,58 @@
+///////
+/// 
+
+#tire{
+    margin: 3% 10%;
+    display: grid;
+    row-gap: 5%;
+    justify-content: center;
+}
+.titreRight{
+    font-size: 35px;
+    margin: 1% 5%;
+    display: revert;
+    display: flex;
+    text-align: center;
+    line-height: normal;
+    justify-content: center;
+}
+
+input{
+    height: 40px;
+    border-radius: 10px;
+    border-width: 0;
+    font-size: 20px;
+    padding: 5px 15px;
+}
+
+mat-form-field{
+    border-radius: 10px;
+    border-width: 0;
+    font-size: 20px;
+    background-color: #ffffff;
+    padding: 5px 15px;
+}
+
+
+.formRight > form > button{
+    height: 50px;
+    border-radius: 10px;
+    color: #ffffff;
+    background-color: #EAB90D;
+    font-size: 20px;
+    border-width: 0px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+mat-tab-group{
+    display: none;
+}
+
+@media only screen and (max-width: 755px) {
+
+    mat-tab-group{
+        display: contents;
+    }
+    
+}

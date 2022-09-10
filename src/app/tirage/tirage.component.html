@@ -1,1 +1,29 @@
-<p>tirage works!</p>
+<div class="container">
+    <div class="left">
+        <app-import-tire></app-import-tire>
+    </div>
+
+    <div class="right">
+        <app-choisir-tire></app-choisir-tire>
+    </div>
+
+   
+</div>
+
+<div class="containerResponsive">
+     <!-- //responsivite -->
+     <mat-tab-group  animationDuration="2000ms">
+        <mat-tab label="Importer et Tirer">
+            <div class="left">
+                <app-import-tire></app-import-tire>
+            </div>
+        </mat-tab>
+        <mat-tab label="Choisir et Tirer">
+            <div class="right">
+                <app-choisir-tire></app-choisir-tire>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>
+
+

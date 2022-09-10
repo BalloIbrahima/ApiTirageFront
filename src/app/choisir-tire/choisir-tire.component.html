@@ -1,0 +1,16 @@
+<label class="titreRight" for="">Tirer une liste existante</label>
+
+        <div class="formRight">
+            <form id="tire" #f2="ngForm" (ngSubmit)="newTirage(f2)">
+                <input type="number" [(ngModel)]="nbrPostulant" id="nbrPostulant" name="nbrPostulant" placeholder="nbrPostulant" ngModel required>
+                <mat-form-field appearance="fill">
+                    <mat-label>Choisir une liste</mat-label>
+                    <mat-select [(ngModel)]="listeSelectionner" name="list">
+                      <mat-option *ngFor="let food of foods" [value]="food.value">
+                        {{food.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                <button type="submit" [disabled]="f2.form.invalid">Tirer</button>
+            </form>
+        </div>
