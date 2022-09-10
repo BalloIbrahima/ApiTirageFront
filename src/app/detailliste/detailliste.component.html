@@ -65,44 +65,30 @@
         
         
    
-        
-      <section>
-        <div class="listPostulant">
-            <h2 class="text">Liste des postulants</h2>
-            <table>
-             <thead>
-                 <th>N°</th>
-                 <th>Nom</th>
-                 <th>Prenom</th>
-                 <th>Numero</th>
-                 <th>Email</th>
-             </thead>
-             <tbody>
-                 <tr>
-                     <td>1</td>
-                     <td>test</td>
-                     <td>test</td>
-                     <td>444444</td>
-                     <td>test@gmail.com</td>
-                 </tr>
-                 <tr>
-                     <td>2</td>
-                     <td>test</td>
-                     <td>test</td>
-                     <td>444444</td>
-                     <td>test@gmail.com</td>
-                 </tr>
-                 <tr>
-                     <td>3</td>
-                     <td>test</td>
-                     <td>test</td>
-                     <td>444444</td>
-                     <td>test@gmail.com</td>
-                 </tr>
-             </tbody>
-            </table>
-         </div>
-      </section>
+        <section>
+            <div class="listPostulant">
+                <h2 class="text">Liste des postulants</h2>
+                <table>
+                 <thead>
+                     <th>N°</th>
+                     <th>Nom</th>
+                     <th>Prenom</th>
+                     <th>Numero</th>
+                     <th>Email</th>
+                 </thead>
+                 <tbody>
+                    <tr *ngFor = "let detailsliste detailsliste">
+                        <td> {{ detailsliste.id }}</td>
+                        <td> {{ detailsliste.nom }}</td>
+                        <td> {{ detailsliste.prenom }}</td>
+                        <td> {{ detailsliste.email }}</td>
+                        <td> {{ detailsliste.numero }}</td>
+                     </tr>
+                 </tbody>
+                </table>
+             </div>
+          </section>
+               
            
     </div>
 </body>

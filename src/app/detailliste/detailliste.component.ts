@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Detailsliste } from '../detailsliste';
+import { DetailslisteService } from '../detailsliste.service';
 
 @Component({
   selector: 'app-detailliste',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetaillisteComponent implements OnInit {
 
-  constructor() { }
+  detailsliste!: Detailsliste[];
+  constructor(private detailslisteService: DetailslisteService) { }
 
   ngOnInit(): void {
+    this.detailslisteService.getDetailsliste().subscribe((data: Detailsliste[]) => {
+      console.log(data);
+      this.detailsliste = data;
+    });
   }
 
 }
