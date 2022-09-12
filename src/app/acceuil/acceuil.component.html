@@ -6,7 +6,6 @@
             <label for="" class="nbrListes">124 Listes</label>
         </div>
 
-
         <div class="searchBar">
             <div class="InputSearch">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#845EC2" class="bi bi-search" viewBox="0 0 16 16">
@@ -17,9 +16,11 @@
         </div>
 
         <div class="listeList">
-            <div class="list">
-                <label id="libelleListe">Liste 1</label>
-                <label id="nbrTirageListe" for="">3 tirages</label>
+            <div class="list" *ngFor="let liste of list">
+                <a (click)="goToDetailliste(liste[0])">
+                    <label id="libelleListe">{{liste[2]}}</label>
+                    <label id="nbrTirageListe" for="">3 tirages</label>
+                </a>
             </div>
 
             <div class="list">

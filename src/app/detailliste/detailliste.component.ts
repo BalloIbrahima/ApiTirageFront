@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Detailsliste } from '../detailsliste';
 import { DetailslisteService } from '../detailsliste.service';
+import { ActivatedRoute, Route, Router, RouterLink } from '@angular/router';
+import { Postulant } from '../postulant';
+import { PostulantService } from '../postulant.service';
 
 @Component({
   selector: 'app-detailliste',
@@ -9,14 +12,21 @@ import { DetailslisteService } from '../detailsliste.service';
 })
 export class DetaillisteComponent implements OnInit {
 
-  detailsliste!: Detailsliste[];
-  constructor(private detailslisteService: DetailslisteService) { }
+  postulant!: Postulant[];
+  id: number = 0;
+
+  constructor(private service: PostulantService, private router:ActivatedRoute, private route:Router,private postulantService: PostulantService) { }
 
   ngOnInit(): void {
-    this.detailslisteService.getDetailsliste().subscribe((data: Detailsliste[]) => {
+    this.postulantService.getPostulant().subscribe((data: Postulant[]) => {
       console.log(data);
-      this.detailsliste = data;
+      this.postulant = data;
     });
+  }
+
+  goToDetailsliste(id:number){
+    console.log(id);
+    //return this.router.navigate(['detailstirage', id]);
   }
 
 }

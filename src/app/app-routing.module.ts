@@ -24,7 +24,7 @@ const routes: Routes = [
     component:DetailtirageComponent
   },
   {
-    path:"detailsliste",
+    path:"detailsliste/:id",
     component:DetaillisteComponent
   },
   {

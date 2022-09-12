@@ -4,4 +4,5 @@ export class Detailsliste {
     prenom: string="";
     email: string="";
     numero: string="";
+    LibelleListe:string="";
 }

@@ -23,6 +23,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ImportTireComponent } from './import-tire/import-tire.component';
 import { ChoisirTireComponent } from './choisir-tire/choisir-tire.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { ChoisirTireComponent } from './choisir-tire/choisir-tire.component';
     FormsModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatTabsModule
+    MatTabsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -111,11 +111,19 @@ table td{
     overflow: hidden;
     width: 100%;
   }
-.topnav p{
-    margin-left: 95px;
+.topnav p i{
+    margin-right: 15px;
+  }
+  .topnav .retour-liste{
+    transition: 0.6s all;
   }
   
+.topnav .retour-liste:hover{
+  margin-left: 15px;
+  cursor: pointer;
+}
   .topnav p {
+    margin-left: 110px;
     float: left;
     display: block;
     color: black;

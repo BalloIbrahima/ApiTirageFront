@@ -77,12 +77,12 @@
                      <th>Email</th>
                  </thead>
                  <tbody>
-                    <tr *ngFor = "let detailsliste detailsliste">
-                        <td> {{ detailsliste.id }}</td>
-                        <td> {{ detailsliste.nom }}</td>
-                        <td> {{ detailsliste.prenom }}</td>
-                        <td> {{ detailsliste.email }}</td>
-                        <td> {{ detailsliste.numero }}</td>
+                    <tr *ngFor = "let postulant of postulant">
+                        <td> {{ postulant.id }}</td>
+                        <td> {{ postulant.nom }}</td>
+                        <td> {{ postulant.prenom }}</td>
+                        <td> {{ postulant.email }}</td>
+                        <td> {{ postulant.numero }}</td>
                      </tr>
                  </tbody>
                 </table>

@@ -8,7 +8,7 @@ import { Detailsliste } from './detailsliste';
 })
 export class DetailslisteService {
 
-  private baseUrl = "http://localhost:8080/postulant/read";
+   baseUrl = "http://localhost:8080/postulant/read";
 
   constructor(private http: HttpClient) { }
   

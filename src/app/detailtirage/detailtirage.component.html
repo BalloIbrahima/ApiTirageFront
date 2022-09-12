@@ -7,6 +7,7 @@
     <title>Document</title>
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="container">
@@ -22,7 +23,9 @@
         <section>
             <div class="details">
                 <div class="topnav">
-                    <p><i class="fa-duotone fa-square-left"></i> Retourner sur details liste</p>
+                    <div class="retour-liste">
+                       <a routerLink="/detailsliste"><p><i class="fa fa-hand-o-left" style="font-size:36px"></i> Retourner sur la liste</p></a> 
+                    </div>
                     <div class="search-container">
                       <form action="/action_page.php">
                         <input type="text" placeholder="Rehercher postulant.." name="search">
@@ -39,7 +42,7 @@
         
       <section>
         <div class="listPostulant">
-            <h2 class="text">Liste des postulants</h2>
+            <h2 class="text">Liste des postulants tirer</h2>
             <table>
              <thead>
                  <th>N°</th>
