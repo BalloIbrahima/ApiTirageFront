@@ -8,6 +8,8 @@ import { ListeService } from '../services/Liste/liste.service';
   styleUrls: ['./detailliste.component.scss']
 })
 export class DetaillisteComponent implements OnInit {
+  searchText:any;
+  p:any;
   list:any;
   constructor(public curentLink:ActivatedRoute, public listeService:ListeService) { }
 

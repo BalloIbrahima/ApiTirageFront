@@ -25,19 +25,20 @@
                     <p>Historique des tirages sur cette liste</p>
                     <div class="search-container">
                       <form action="/action_page.php">
-                        <input type="text" placeholder="Rehercher postulant.." name="search">
+                        <input type="text" placeholder="Rehercher postulant.." name="search" [(ngModel)]="searchText"/>
                         <button type="submit"><i class="fa fa-search"></i></button>
                       </form>
                     </div>
                   </div>
             </div>
        
+
             <div class="tirageHistorique">
                 <div class="sousTirageHistorique">
-                     <div class="elementHistorique" *ngFor="let t of list.tirages" [routerLink]="['/detailstirage', t.id]">
-                         <p>{{t.libelle}}</p>
-                         <p>{{t.date}}</p>
-                     </div>
+                    <div class="elementHistorique" *ngFor="let t of list.tirages" [routerLink]="['/detailstirage', t.id]">
+                        <p>{{t.libelle}}</p>
+                        <p>{{t.date}}</p>
+                    </div>
                 </div>
                 <!-- <div class="sousTirageHistorique">
                      <div class="elementHistorique">
@@ -58,7 +59,7 @@
                  </div>
                 </div>
                   -->
-                <input type="button" value="Voir Plus" class="btnPlusListe">
+                
               
              </div>
         </section>
@@ -78,7 +79,7 @@
                  <th>Email</th>
              </thead>
              <tbody>
-                 <tr *ngFor="let p of list.postulants">
+                 <tr *ngFor="let p of list.postulants |filter:searchText  | paginate: {itemsPerPage:7,currentPage: p}; let id = index">
                      <td>{{p.id}}</td>
                      <td>{{p.nom}}</td>
                      <td>{{p.prenom}}</td>
@@ -101,6 +102,7 @@
                  </tr> -->
              </tbody>
             </table>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
          </div>
       </section>
            

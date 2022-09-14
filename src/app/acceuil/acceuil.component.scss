@@ -12,7 +12,13 @@
     row-gap: 3%;
     padding: 1.5%;
 }
-
+.listeList{
+    display: grid;
+    padding: 4%;
+    grid-template-columns: auto auto;
+    column-gap: 2%;
+    row-gap: 14px;
+}
 .searchBar{
     display: flex;
     justify-content: center;
@@ -58,6 +64,7 @@
     height: 50px;
     background-color: #FFFFFF;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 
@@ -110,10 +117,13 @@
     font-size: 25px;
     margin: 5px;
     font-weight: bold;
+    cursor: pointer;
 }
 #nbrTirageListe{
     margin: 5px;
     font-size: 15px;
+    cursor: pointer;
+
 }
 
 .list{

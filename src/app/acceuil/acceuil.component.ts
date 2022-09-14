@@ -8,7 +8,8 @@ import { TirageService } from '../services/Tirage/tirage.service';
   styleUrls: ['./acceuil.component.scss']
 })
 export class AcceuilComponent implements OnInit {
-
+  searchText:any;
+  p:any;
   nombreList:Number=0;
   nombreTirage:Number=0;
 

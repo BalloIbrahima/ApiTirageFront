@@ -13,19 +13,21 @@
         <div class="titre-section">
             <div class="theTitre">
                 <h2>{{tirage.libelle}}</h2>
-                <p>
+                <!-- <p>
                     {{tirage.date}}
-                </p>
+                </p> -->
             </div>
         </div>
         
         <section>
             <div class="details">
                 <div class="topnav">
-                    <p><i class="fa-duotone fa-square-left"></i> Retourner sur details liste</p>
+                    <div class="retour-liste">
+                        <a routerLink="/detailsliste:/id"><p><i class="fa fa-hand-o-left" style="font-size:36px"></i> Retourner sur la liste</p></a> 
+                     </div>
                     <div class="search-container">
                       <form action="/action_page.php">
-                        <input type="text" placeholder="Rehercher postulant.." name="search">
+                        <input type="text" placeholder="Rehercher postulant.." name="search" [(ngModel)]="searchListe"/>
                         <button type="submit"><i class="fa fa-search"></i></button>
                       </form>
                     </div>
@@ -49,12 +51,12 @@
                  <th>Email</th>
              </thead>
              <tbody>
-                 <tr *ngFor="let pt of tirage.postulantTries">
-                     <td>{{postulant(pt.postulants.id).id}}</td>
-                     <td>{{postulant(pt.postulants.id).nom}}</td>
-                     <td>{{postulant(pt.postulants.id).prenom}}</td>
-                     <td>{{postulant(pt.postulants.id).numero}}</td>
-                     <td>{{postulant(pt.postulants.id).email}}</td>
+                 <tr *ngFor="let pt of tirage.postulantTries |filter:searchListe  | paginate: {itemsPerPage:7,currentPage: p}; let id = index">
+                     <td>{{pt.postulants.id}}</td>
+                     <td>{{pt.postulants.nom}}</td>
+                     <td>{{pt.postulants.prenom}}</td>
+                     <td>{{pt.postulants.numero}}</td>
+                     <td>{{pt.postulants.email}}</td>
                  </tr>
                  <!-- <tr>
                      <td>2</td>
@@ -72,6 +74,7 @@
                  </tr> -->
              </tbody>
             </table>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
          </div>
       </section>
            
