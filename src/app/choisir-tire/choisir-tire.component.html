@@ -6,11 +6,14 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Choisir une liste</mat-label>
                     <mat-select [(ngModel)]="listeSelectionner" name="list">
-                      <mat-option *ngFor="let food of foods" [value]="food.value">
-                        {{food.viewValue}}
+                      <mat-option *ngFor="let l of list" [value]="l.libelle">
+                        {{l.libelle}}
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
+
+                  <label *ngIf="erreur" id="error" >{{message}}</label>
+
                 <button type="submit" [disabled]="f2.form.invalid">Tirer</button>
             </form>
         </div>

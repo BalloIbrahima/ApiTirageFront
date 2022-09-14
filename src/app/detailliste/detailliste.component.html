@@ -12,9 +12,9 @@
     <div class="container">
         <div class="titre-section">
             <div class="theTitre">
-                <h2>LibelléListe</h2>
+                <h2>{{list.libelle}}</h2>
                 <p>
-                    22/07/2022
+                    {{list.date}}
                 </p>
             </div>
         </div>
@@ -25,21 +25,22 @@
                     <p>Historique des tirages sur cette liste</p>
                     <div class="search-container">
                       <form action="/action_page.php">
-                        <input type="text" placeholder="Rehercher postulant.." name="search">
+                        <input type="text" placeholder="Rehercher postulant.." name="search" [(ngModel)]="searchText"/>
                         <button type="submit"><i class="fa fa-search"></i></button>
                       </form>
                     </div>
                   </div>
             </div>
        
+
             <div class="tirageHistorique">
                 <div class="sousTirageHistorique">
-                     <div class="elementHistorique">
-                         <p>Tirage1</p>
-                         <p>Date1</p>
-                     </div>
+                    <div class="elementHistorique" *ngFor="let t of list.tirages" [routerLink]="['/detailstirage', t.id]">
+                        <p>{{t.libelle}}</p>
+                        <p>{{t.date}}</p>
+                    </div>
                 </div>
-                <div class="sousTirageHistorique">
+                <!-- <div class="sousTirageHistorique">
                      <div class="elementHistorique">
                          <p>Tirage2</p>
                          <p>Date</p>
@@ -57,8 +58,8 @@
                      <p>Date4</p>
                  </div>
                 </div>
+                  -->
                 
-                <input type="button" value="Voir Plus" class="btnPlusListe">
               
              </div>
         </section>
@@ -78,14 +79,14 @@
                  <th>Email</th>
              </thead>
              <tbody>
-                 <tr>
-                     <td>1</td>
-                     <td>test</td>
-                     <td>test</td>
-                     <td>444444</td>
-                     <td>test@gmail.com</td>
+                 <tr *ngFor="let p of list.postulants |filter:searchText  | paginate: {itemsPerPage:7,currentPage: p}; let id = index">
+                     <td>{{p.id}}</td>
+                     <td>{{p.nom}}</td>
+                     <td>{{p.prenom}}</td>
+                     <td>{{p.numero}}</td>
+                     <td>{{p.email}}</td>
                  </tr>
-                 <tr>
+                 <!-- <tr>
                      <td>2</td>
                      <td>test</td>
                      <td>test</td>
@@ -98,9 +99,10 @@
                      <td>test</td>
                      <td>444444</td>
                      <td>test@gmail.com</td>
-                 </tr>
+                 </tr> -->
              </tbody>
             </table>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
          </div>
       </section>
            

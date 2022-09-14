@@ -4,8 +4,8 @@
     <form id="import" #f="ngForm" (ngSubmit)="newTirage(f)">
         <input type="text" [(ngModel)]="libelle" id="libelle" name="libelle" placeholder="Libelle" ngModel required>
         <input type="number" [(ngModel)]="nbrPostulantNew" id="nbrPostulantNew" name="nbrPostulantNew" placeholder="Nombre de Postulant à Tirer" ngModel required>
-        <input type="file" id="file" name="file" ngModel required>
-
+        <input type="file" id="file" name="file" ngModel required (change)="selectFile($event)">
+        <label *ngIf="erreur" id="error" >{{message}}</label>
         
         <button type="submit" [disabled]="f.form.invalid">Importer et Tirer</button>
     </form>
