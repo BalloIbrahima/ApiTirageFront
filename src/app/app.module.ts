@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,10 +19,13 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { FormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ImportTireComponent } from './import-tire/import-tire.component';
 import { ChoisirTireComponent } from './choisir-tire/choisir-tire.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -49,9 +52,11 @@ import { ChoisirTireComponent } from './choisir-tire/choisir-tire.component';
     FormsModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatTabsModule
+    MatTabsModule,
+    HttpClientModule,
+    MatPaginatorModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

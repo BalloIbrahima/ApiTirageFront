@@ -12,9 +12,9 @@
     <div class="container">
         <div class="titre-section">
             <div class="theTitre">
-                <h2>LibelléTirage</h2>
+                <h2>{{tirage.libelle}}</h2>
                 <p>
-                    22/07/2022
+                    {{tirage.date}}
                 </p>
             </div>
         </div>
@@ -49,14 +49,14 @@
                  <th>Email</th>
              </thead>
              <tbody>
-                 <tr>
-                     <td>1</td>
-                     <td>test</td>
-                     <td>test</td>
-                     <td>444444</td>
-                     <td>test@gmail.com</td>
+                 <tr *ngFor="let pt of tirage.postulantTries">
+                     <td>{{postulant(pt.postulants.id).id}}</td>
+                     <td>{{postulant(pt.postulants.id).nom}}</td>
+                     <td>{{postulant(pt.postulants.id).prenom}}</td>
+                     <td>{{postulant(pt.postulants.id).numero}}</td>
+                     <td>{{postulant(pt.postulants.id).email}}</td>
                  </tr>
-                 <tr>
+                 <!-- <tr>
                      <td>2</td>
                      <td>test</td>
                      <td>test</td>
@@ -69,7 +69,7 @@
                      <td>test</td>
                      <td>444444</td>
                      <td>test@gmail.com</td>
-                 </tr>
+                 </tr> -->
              </tbody>
             </table>
          </div>
