@@ -25,6 +25,10 @@ import { ImportTireComponent } from './import-tire/import-tire.component';
 import { ChoisirTireComponent } from './choisir-tire/choisir-tire.component';
 import { HttpClientModule } from '@angular/common/http';
 
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+
 
 @NgModule({
   declarations: [
@@ -51,7 +55,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     MatSelectModule,
     MatTabsModule,
-    HttpClientModule
+    HttpClientModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

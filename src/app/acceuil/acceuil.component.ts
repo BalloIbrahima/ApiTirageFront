@@ -8,9 +8,11 @@ import { PostulantService } from '../postulant.service';
   styleUrls: ['./acceuil.component.scss']
 })
 export class AcceuilComponent implements OnInit {
+  p: number = 1;
+  list: any;
+  serachListe:any;
 
-list: any;
-
+  url = "/detailsliste"
   constructor(private service: PostulantService, private router:Router) { }
 
   ngOnInit(): void {

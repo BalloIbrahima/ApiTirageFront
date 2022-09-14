@@ -16,6 +16,7 @@ export class PostulantService {
     return this.http.get<Postulant[]>(`${this.baseUrl}`);
   }
 
+  //foncytiin de recuperation de la liste
   getToutesListe():Observable<Object>{
     return this.http.get("http://localhost:8080/listePostulant/AfficherListe");
   }

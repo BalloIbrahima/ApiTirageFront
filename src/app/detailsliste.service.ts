@@ -8,11 +8,14 @@ import { Detailsliste } from './detailsliste';
 })
 export class DetailslisteService {
 
-   baseUrl = "http://localhost:8080/postulant/read";
+   baseUrl = "http://localhost:8080/trie/AfficherListeParTirage/";
 
   constructor(private http: HttpClient) { }
   
-  getDetailsliste(): Observable<Detailsliste[]>{
-    return this.http.get<Detailsliste[]>(`${this.baseUrl}`);
+  getTirageAssocier(id:number): Observable<Object>{
+    return this.http.get(`${this.baseUrl}/${id}`);
   }
+
+
+
 }

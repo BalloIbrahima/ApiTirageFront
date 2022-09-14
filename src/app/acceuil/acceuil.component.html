@@ -11,33 +11,35 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#845EC2" class="bi bi-search" viewBox="0 0 16 16">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                   </svg>
-                <input type="text" name="motCle" id="motCle" placeholder="Recherche liste">
+                <input type="text" name="motCle" id="motCle" placeholder="Recherche liste" [(ngModel)]="serachListe">
             </div>
         </div>
 
         <div class="listeList">
-            <div class="list" *ngFor="let liste of list">
-                <a (click)="goToDetailliste(liste[0])">
-                    <label id="libelleListe">{{liste[2]}}</label>
+                <a (click)="goToDetailliste(liste[0])" id="link-liste" class="list" *ngFor="let liste of list |filter:serachListe | paginate: {itemsPerPage:8,currentPage: p};">
+                    <label id="libelleListe" [routerLink]="[liste[2]]">{{liste[2]}}</label>
                     <label id="nbrTirageListe" for="">3 tirages</label>
                 </a>
-            </div>
-
-            <div class="list">
-                <label id="libelleListe">Liste 1</label>
-                <label id="nbrTirageListe" for="">3 tirages</label>
-            </div>
-
-            <div class="list">
-                <label id="libelleListe">Liste 1</label>
-                <label id="nbrTirageListe" for="">3 tirages</label>
-            </div>
-
-            <div class="list">
-                <label id="libelleListe">Liste 1</label>
-                <label id="nbrTirageListe" for="">3 tirages</label>
-            </div>
         </div>
+<!--
+            <div class="list"> 
+                <label id="libelleListe">Liste 1</label>
+                <label id="nbrTirageListe" for="">3 tirages</label>
+            </div>
+
+            <div class="list">
+                <label id="libelleListe">Liste 1</label>
+                <label id="nbrTirageListe" for="">3 tirages</label>
+            </div>
+
+            <div class="list">
+                <label id="libelleListe">Liste 1</label>
+                <label id="nbrTirageListe" for="">3 tirages</label>
+            </div>
+                
+-->
+       
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </div>
 
     <div class="right">
@@ -56,6 +58,7 @@
             </div>
             
         </diV>
+       
 
     </div>
 </div>

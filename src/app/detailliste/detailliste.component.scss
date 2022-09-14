@@ -20,8 +20,7 @@
 .theTitre p{
     margin-right: 70px;
     line-height: 60px;
-    font-size: 10rem;
-    font-size: 3em;
+    font-size: 2rem;
     font-weight: 600;
 }
 .theTitre h2{
@@ -35,40 +34,50 @@
     margin: auto;
     width: 80%;
     padding: 15px;
-    height: auto;
+    height: 40vh;
     background-color: #e9e9e9;
     border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 .sousTirageHistorique{
     width: 90%;
     margin: auto;
     height: 50px;
-    background-color: white;
+    background-color:#ccc;
     border-radius: 15px;
-    margin-bottom: 0.6em;
+    margin-bottom: 5px;
 }
+.sous-liste{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.sous-liste .btn{
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  background-color: #EAB90D;
+  border-radius: 40px;
+  padding: 10px;
+  margin-top: 10px;
+  width: 20%;
+  text-align: center;
+}
+
 .elementHistorique{
+    
     display: flex;
     justify-content: space-around;
+    
 }
 .elementHistorique p{
     font-size: 18px;
     font-weight: 2rem;
     line-height: 50px;
 }
-.btnPlusListe{
-    margin-left: 45px;
-    font-size: 15px;
-    font-weight:600;
-    border-radius: 15px;
-    padding: 15px;
-    border: 1px solid #EAB90D;
-    background-color: #EAB90D;
-    cursor: pointer;
-}
+
 
 
 .listPostulant{
@@ -91,7 +100,6 @@
 table{
     border-collapse: collapse;
     width: 100%;
-    margin-bottom: 100px;
 }
 table th{
     background-color: #845EC2;

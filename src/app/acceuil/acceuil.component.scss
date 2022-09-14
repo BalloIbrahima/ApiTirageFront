@@ -17,6 +17,11 @@
     display: flex;
     justify-content: center;
 }
+#link-liste{
+    display: flex;
+    flex-direction: column;
+    
+}
 .InputSearch{
     margin-top: 10px;
     width: 40%;
@@ -58,6 +63,7 @@
     height: 50px;
     background-color: #FFFFFF;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 
