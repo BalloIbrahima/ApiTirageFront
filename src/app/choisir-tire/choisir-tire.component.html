@@ -1,4 +1,13 @@
-<label class="titreRight" for="">Tirer une liste existante</label>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+  <label class="titreRight" for="">Tirer une liste existante</label>
 
         <div class="formRight">
             <form id="tire" #f2="ngForm" (ngSubmit)="newTirage(f2)">
@@ -14,6 +23,16 @@
 
                   <label *ngIf="erreur" id="error" >{{message}}</label>
 
-                <button type="submit" [disabled]="f2.form.invalid">Tirer</button>
+                <button type="submit" data-bs-toggle="modal-dialog modal-lg"
+                data-bs-target="#AddEtudiant" [disabled]="f2.form.invalid">Tirer</button>
             </form>
+            
+      <div class="modal-dialog modal-lg" id="AddEtudiant">Tirage effectuer avec succes</div>
         </div>
+</body>
+</html>
+
+
+
+
+

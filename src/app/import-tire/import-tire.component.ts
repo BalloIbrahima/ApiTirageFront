@@ -27,7 +27,6 @@ export class ImportTireComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    
 
     newTirage(f:NgForm){
       this.tirageService.create(this.libelle,this.nbrPostulantNew,this.fichier).subscribe(data=>{
