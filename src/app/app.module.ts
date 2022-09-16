@@ -27,6 +27,8 @@ import { ChoisirTireComponent } from './choisir-tire/choisir-tire.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { SuccesTirageComponent } from './succes-tirage/succes-tirage.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -39,7 +41,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     DetaillisteComponent,
     EnteteComponent,
     ImportTireComponent,
-    ChoisirTireComponent
+    ChoisirTireComponent,
+    SuccesTirageComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +61,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     HttpClientModule,
     MatPaginatorModule,
     Ng2SearchPipeModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],

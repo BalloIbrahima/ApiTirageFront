@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Title } from '@angular/platform-browser';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ListeService } from '../services/Liste/liste.service';
 import { TirageService } from '../services/Tirage/tirage.service';
+import { SuccesTirageComponent } from '../succes-tirage/succes-tirage.component';
 
 @Component({
   selector: 'app-import-tire',
@@ -18,11 +19,12 @@ export class ImportTireComponent implements OnInit {
     fichier:any;
     message:String;
     postulantsTires:any;
+    libelleTirage:String
 
     //variable qui doit indiquer s'il ya erreur ou pas
     erreur=false;
 
-    constructor(public listeService:ListeService, public tirageService:TirageService,private router:Router) { }
+    constructor(public dialog: MatDialog,public listeService:ListeService, public tirageService:TirageService,private router:Router) { }
 
     ngOnInit(): void {
     }
@@ -30,13 +32,16 @@ export class ImportTireComponent implements OnInit {
     
 
     newTirage(f:NgForm){
-      this.tirageService.create(this.libelle,this.nbrPostulantNew,this.fichier).subscribe(data=>{
+      this.tirageService.create(this.libelle,this.nbrPostulantNew,this.fichier,this.libelleTirage).subscribe(data=>{
         console.log(data.message)
 
         if(data.message=="ok"){
           console.log(data.data[0].id)
           this.postulantsTires=data.data;
-          this.router.navigate(["detailstirage"],data.data[0].id);
+          this.openDialog();
+          // this.router.navigate(["/detailstirage"],data.data[0].id);
+          this.router.navigate(["/acceuil"]);
+
         }else if(data.message=="Cette lise existe deja"){
           this.erreur=true;
           this.message="Une liste avec le même libelle existe déja !"
@@ -79,5 +84,13 @@ export class ImportTireComponent implements OnInit {
         }
       }
      }
+
+     async openDialog() {
+      this.dialog.open(SuccesTirageComponent, {
+        // data: {
+        //   animal: 'panda',
+        // },
+      });
+    }
 
 }

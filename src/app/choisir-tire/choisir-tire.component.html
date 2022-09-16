@@ -2,7 +2,8 @@
 
         <div class="formRight">
             <form id="tire" #f2="ngForm" (ngSubmit)="newTirage(f2)">
-                <input type="number" [(ngModel)]="nbrPostulant" id="nbrPostulant" name="nbrPostulant" placeholder="nbrPostulant" ngModel required>
+              <input type="text" [(ngModel)]="libelleTirage" id="libelleTirage" name="libelleTirage" placeholder="libelle Tirage" ngModel required>  
+              <input type="number" [(ngModel)]="nbrPostulant" id="nbrPostulant" name="nbrPostulant" placeholder="nombre Postulant" ngModel required>
                 <mat-form-field appearance="fill">
                     <mat-label>Choisir une liste</mat-label>
                     <mat-select [(ngModel)]="listeSelectionner" name="list">

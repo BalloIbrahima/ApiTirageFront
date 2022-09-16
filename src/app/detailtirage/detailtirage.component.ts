@@ -26,7 +26,7 @@ export class DetailtirageComponent implements OnInit {
 
 
   back(): void {
-    this.router.navigate(['/..'])
+    window.history.back()
   }
 
 }

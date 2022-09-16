@@ -17,6 +17,7 @@ export class DetaillisteComponent implements OnInit {
     const id=this.curentLink.snapshot.params['id']
     
     this.listeService.getTirages(id).subscribe(donne=>{
+      console.log(donne)
       this.list=donne.data
     })
 

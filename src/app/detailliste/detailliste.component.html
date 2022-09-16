@@ -14,7 +14,7 @@
             <div class="theTitre">
                 <h2>{{list.libelle}}</h2>
                 <p>
-                    {{list.date}}
+                    {{list.date |date:"yyyy-MM-dd - H:m:s" }}
                 </p>
             </div>
         </div>
@@ -37,7 +37,8 @@
                 <div class="sousTirageHistorique">
                     <div class="elementHistorique" *ngFor="let t of list.tirages" [routerLink]="['/detailstirage', t.id]">
                         <p>{{t.libelle}}</p>
-                        <p>{{t.date}}</p>
+                        <p>{{t.postulantTries.length}} personnes</p>
+                        <p>{{t.date |date:"yyyy-MM-dd - H:m:s" }}</p>
                     </div>
                 </div>
                 <!-- <div class="sousTirageHistorique">
