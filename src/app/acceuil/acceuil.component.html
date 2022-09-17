@@ -2,8 +2,8 @@
     <div class="left">
         
         <div class="menuResponsive">
-            <label for="" class="nbrTirages">124 Tirages</label>
-            <label for="" class="nbrListes">124 Listes</label>
+            <label for="" class="nbrTirages">{{nombreTirage}} Tirages</label>
+            <label for="" class="nbrListes">{{nombreList}} Listes</label>
         </div>
 
 
@@ -12,45 +12,36 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#845EC2" class="bi bi-search" viewBox="0 0 16 16">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                   </svg>
-                <input type="text" name="motCle" id="motCle" placeholder="Recherche liste">
+                <input type="text" name="motCle" id="motCle" placeholder="Recherche liste" [(ngModel)]="searchText">
             </div>
         </div>
 
-        <div class="listeList">
-            <div class="list">
-                <label id="libelleListe">Liste 1</label>
-                <label id="nbrTirageListe" for="">3 tirages</label>
-            </div>
-
-            <div class="list">
-                <label id="libelleListe">Liste 1</label>
-                <label id="nbrTirageListe" for="">3 tirages</label>
-            </div>
-
-            <div class="list">
-                <label id="libelleListe">Liste 1</label>
-                <label id="nbrTirageListe" for="">3 tirages</label>
-            </div>
-
-            <div class="list">
-                <label id="libelleListe">Liste 1</label>
-                <label id="nbrTirageListe" for="">3 tirages</label>
+        <div class="listeList" >
+            <div class="list" *ngFor="let l of listeService.liste |filter:searchText  | paginate: {itemsPerPage:16,currentPage: p}; let id = index" [routerLink]="['/detailsliste', l.id]" >
+                <label id="libelleListe">{{l.libelle}}</label>
+                <label id="nbrTirageListe" for="">{{l.tirages.length}} tirages</label>
             </div>
         </div>
-    </div>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+        <div class="listvide" *ngIf="listeService.liste.length==0">
+            <label>Aucune liste dans la base de donnée</label>
+        </div>
+
+    </div> 
 
     <div class="right">
 
         <div class="nbrTirage">
             <div class="labelContainer" >
-                <label for="">120</label>
+                <label for="">{{nombreTirage}}</label>
                 <label for="">Tirages</label>
             </div>
         </div>
 
         <diV class="nbrliste">
             <div class="labelContainer" >
-                <label for="">120</label>
+                <label for="">{{nombreList}}</label>
                 <label for="">Listes</label>
             </div>
             

@@ -2,15 +2,19 @@
 
         <div class="formRight">
             <form id="tire" #f2="ngForm" (ngSubmit)="newTirage(f2)">
-                <input type="number" [(ngModel)]="nbrPostulant" id="nbrPostulant" name="nbrPostulant" placeholder="nbrPostulant" ngModel required>
+              <input type="text" [(ngModel)]="libelleTirage" id="libelleTirage" name="libelleTirage" placeholder="libelle Tirage" ngModel required>  
+              <input type="number" [(ngModel)]="nbrPostulant" id="nbrPostulant" name="nbrPostulant" placeholder="nombre Postulant" ngModel required>
                 <mat-form-field appearance="fill">
                     <mat-label>Choisir une liste</mat-label>
                     <mat-select [(ngModel)]="listeSelectionner" name="list">
-                      <mat-option *ngFor="let food of foods" [value]="food.value">
-                        {{food.viewValue}}
+                      <mat-option *ngFor="let l of list" [value]="l.libelle">
+                        {{l.libelle}}
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
+
+                  <label *ngIf="erreur" id="error" >{{message}}</label>
+
                 <button type="submit" [disabled]="f2.form.invalid">Tirer</button>
             </form>
         </div>
