@@ -12,39 +12,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"> 
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-    <script>
-        const exampleModal = document.getElementById('exampleModal')
-    exampleModal.addEventListener('show.bs.modal', event => {
-      // Button that triggered the modal
-      const button = event.relatedTarget
-      // Extract info from data-bs-* attributes
-      const recipient = button.getAttribute('data-bs-whatever')
-      // If necessary, you could initiate an AJAX request here
-      // and then do the updating in a callback.
-      //
-      // Update the modal's content.
-      const modalTitle = exampleModal.querySelector('.modal-title')
-      const modalBodyInput = exampleModal.querySelector('.modal-body input')
-    
-      modalTitle.textContent = `New message to ${recipient}`
-      modalBodyInput.value = recipient
-    })
-
-    const myModalEl = document.getElementById('myModal')
-myModalEl.addEventListener('hidden.bs.modal', event => {
-  // do something...
-})
-
-    </script>
 </head>
 <body>
     <div class="container">
         <div class="titre-section">
             <div class="theTitre">
-                <h2>{{list[2]}}</h2>
+                <h2>{{list.libelle}}</h2>
                 <p>
-                    {{list[1]}}
+                    {{list.date
                 </p>
             </div>
         </div>
@@ -54,17 +29,17 @@ myModalEl.addEventListener('hidden.bs.modal', event => {
                 <div class="topnav">
                     <p>Historique des tirages sur cette liste</p>
                     <div class="search-container">
-                        <input type="text" placeholder="Rehercher postulant..">
+                        <input type="text" placeholder="Rehercher postulant.." [(ngModel)]="searchText">
                         <button type="submit"><i class="fa fa-search"></i></button>
                     </div>
                   </div>
             </div>
        
             <div class="tirageHistorique">
-                <div class="sousTirageHistorique" *ngFor="let tirages of tirage">
-                     <div class="elementHistorique">
-                         <p>{{tirages[2]}}</p>
-                         <p>{{tirages[1]}}</p>
+                <div class="sousTirageHistorique">
+                     <div class="elementHistorique"  *ngFor="let t of list.tirages" [routerLink]="['/detailtirage', t.id]">
+                         <p>{{t.libelle}</p>
+                         <p>{{t.date</p>
                      </div>
                 </div> 
              </div>
@@ -73,33 +48,6 @@ myModalEl.addEventListener('hidden.bs.modal', event => {
         
    
     <section>
-        <h3>Creer un nouveau postulant</h3>
-        <form (ngSubmit) = "onSubmit()">
-            <div class="form-group">
-                <label for="nom">Nom</label>
-                <input type="text" class="form-control" id="nom"
-                [(ngModel)]="Addpostulant.nom" name="nom">
-            </div>
-
-            <div class="form-group">
-                <label for="prenom">Prenom</label>
-                <input type="text" class="form-control" id="prenom"
-                [(ngModel)]="Addpostulant.prenom" name="prenom">
-            </div>
-
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="text" class="form-control" id="email"
-                [(ngModel)]="Addpostulant.email" name="email">
-            </div>
-            <div class="form-group">
-                <label for="numero">Numero</label>
-                <input type="text" class="form-control" id="numero"
-                [(ngModel)]="Addpostulant.numero" name="numero">
-            </div>
-
-            <button class="btn btn-succes" type="submit">Ajouter</button>
-        </form>
 
             <div class="listPostulant">
                 <h2 class="text">Liste des postulants</h2>
@@ -112,7 +60,7 @@ myModalEl.addEventListener('hidden.bs.modal', event => {
                      <th>Email</th>
                  </thead>
                  <tbody>
-                    <tr *ngFor = "let postulant of postulant |filter:searchText  | paginate: {itemsPerPage:7,currentPage: p}; let id = index">
+                    <tr *ngFor = "let postulant of list.postulant |filter:searchText  | paginate: {itemsPerPage:7,currentPage: p}; let id = index">
                         <td> {{ postulant.id }}</td> 
                         <td> {{ postulant.nom }}</td>
                         <td> {{ postulant.prenom }}</td>
@@ -130,40 +78,8 @@ myModalEl.addEventListener('hidden.bs.modal', event => {
                
              </div>
           </section>
-
-
-          <!--
-               <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <table #dataTable class="display"> 
-                            <thead>
-                                <th>N°</th>
-                                <th>Nom</th>
-                                <th>Prenom</th>
-                                <th>Numero</th>
-                                <th>Email</th>
-                            </thead>
-                            <tbody>
-                               <tr *ngFor = "let postulants of postulant">
-                                   <td> {{ postulants.id }}</td>
-                                   <td> {{ postulants.nom }}</td>
-                                   <td> {{ postulants.prenom }}</td>
-                                   <td> {{ postulants.email }}</td>
-                                   <td> {{ postulants.numero }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-               </div>
-              -->
         
     </div>
 
-
-
-
-   
 </body>
 </html>

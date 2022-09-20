@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,14 +19,16 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { FormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ImportTireComponent } from './import-tire/import-tire.component';
 import { ChoisirTireComponent } from './choisir-tire/choisir-tire.component';
 import { HttpClientModule } from '@angular/common/http';
-
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { SuccesTirageComponent } from './succes-tirage/succes-tirage.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -39,7 +41,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     DetaillisteComponent,
     EnteteComponent,
     ImportTireComponent,
-    ChoisirTireComponent
+    ChoisirTireComponent,
+    SuccesTirageComponent
   ],
   imports: [
     BrowserModule,
@@ -56,10 +59,15 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     MatSelectModule,
     MatTabsModule,
     HttpClientModule,
+    MatPaginatorModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule,
+    MatDialogModule,
+    HttpClientModule,
     Ng2SearchPipeModule,
     NgxPaginationModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

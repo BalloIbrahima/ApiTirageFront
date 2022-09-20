@@ -13,9 +13,9 @@
     <div class="container">
         <div class="titre-section">
             <div class="theTitre">
-                <h2>LibelléTirage</h2>
+                <h2>{{tirage.libelle}}</h2>
                 <p>
-                    22/07/2022
+                    {{tirage.date |date:"yyyy-MM-dd - H:m:s" }}
                 </p>
             </div>
         </div>
@@ -24,11 +24,11 @@
             <div class="details">
                 <div class="topnav">
                     <div class="retour-liste">
-                       <a routerLink="/detailsliste"><p><i class="fa fa-hand-o-left" style="font-size:36px"></i> Retourner sur la liste</p></a> 
-                    </div>
+                        <a (click)="back()"> <p><i class="fa fa-hand-o-left" style="font-size:36px"></i> Retourner sur la liste</p></a> 
+                     </div>
                     <div class="search-container">
                       <form action="/action_page.php">
-                        <input type="text" placeholder="Rehercher postulant.." name="search">
+                        <input type="text" placeholder="Rehercher postulant.." name="search" [(ngModel)]="searchListe"/>
                         <button type="submit"><i class="fa fa-search"></i></button>
                       </form>
                     </div>
@@ -52,14 +52,14 @@
                  <th>Email</th>
              </thead>
              <tbody>
-                 <tr>
-                     <td>1</td>
-                     <td>test</td>
-                     <td>test</td>
-                     <td>444444</td>
-                     <td>test@gmail.com</td>
+                 <tr *ngFor="let pt of tirage.postulantTries |filter:searchListe  | paginate: {itemsPerPage:7,currentPage: p}; let id = index">
+                     <td>{{pt.postulants.id}}</td>
+                     <td>{{pt.postulants.nom}}</td>
+                     <td>{{pt.postulants.prenom}}</td>
+                     <td>{{pt.postulants.numero}}</td>
+                     <td>{{pt.postulants.email}}</td>
                  </tr>
-                 <tr>
+                 <!-- <tr>
                      <td>2</td>
                      <td>test</td>
                      <td>test</td>
@@ -72,9 +72,10 @@
                      <td>test</td>
                      <td>444444</td>
                      <td>test@gmail.com</td>
-                 </tr>
+                 </tr> -->
              </tbody>
             </table>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
          </div>
       </section>
            

@@ -20,17 +20,25 @@
 .theTitre p{
     margin-right: 70px;
     line-height: 60px;
-    font-size: 10rem;
-    font-size: 3em;
+    font-size: 2em;
     font-weight: 600;
+    color: white;
 }
 .theTitre h2{
     margin-left: 70px;
     line-height: 60px;
     font-size: 3em;
     font-weight: 600;
+    color: white;
+}
+.topnav .retour-liste{
+  transition: 0.6s all;
 }
 
+.topnav .retour-liste:hover{
+margin-left: 15px;
+cursor: pointer;
+}
 .tirageHistorique{
     margin: auto;
     width: 80%;

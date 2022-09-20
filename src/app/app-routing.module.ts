@@ -20,17 +20,17 @@ const routes: Routes = [
     pathMatch:'full'
   },
   {
-    path:"detailstirage",
+    path:"detailstirage/:id",
     component:DetailtirageComponent
   },
   {
     path:"detailsliste/:id",
     component:DetaillisteComponent
   },
-  {
-    path:"**",
-    redirectTo:"acceuil",
-    pathMatch:'full'  }
+  // {
+  //   path:"**",
+  //   redirectTo:"acceuil",
+  //   pathMatch:'full'  }
 ];
 
 @NgModule({
