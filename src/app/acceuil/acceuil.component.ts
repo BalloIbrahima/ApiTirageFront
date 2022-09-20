@@ -12,7 +12,6 @@ export class AcceuilComponent implements OnInit {
   list: any;
   serachListe:any;
 
-  url = "/detailsliste"
   constructor(private service: PostulantService, private router:Router) { }
 
   ngOnInit(): void {
