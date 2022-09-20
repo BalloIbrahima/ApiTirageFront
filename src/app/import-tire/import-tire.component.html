@@ -3,7 +3,9 @@
 
 <div class="formLeft">
     <form id="import" #f="ngForm" (ngSubmit)="newTirage(f)">
-        <input type="text" [(ngModel)]="libelle" id="libelle" name="libelle" placeholder="Libelle" ngModel required>
+        <input type="text" [(ngModel)]="libelle" id="libelle" name="libelle" placeholder="Libelle liste" ngModel required>
+        <input type="text" [(ngModel)]="libelleTirage" id="libelleTirage" name="libelleTirage" placeholder="libelle Tirage" ngModel required>  
+
         <input type="number" [(ngModel)]="nbrPostulantNew" id="nbrPostulantNew" name="nbrPostulantNew" placeholder="Nombre de Postulant à Tirer" ngModel required>
         <input type="file" id="file" name="file" ngModel required (change)="selectFile($event)">
         <label *ngIf="erreur" id="error" >{{message}}</label>

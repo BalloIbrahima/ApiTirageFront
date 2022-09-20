@@ -14,10 +14,10 @@ export class TirageService {
   constructor(private http:HttpClient) { }
 
   //methode pour la création d'un tirage
-  create(libelle:String,nombre:Number,excel:File):Observable<any>{
+  create(libelle:String,nombre:Number,excel:File,libelleTirage:String):Observable<any>{
     const data:FormData=new FormData();
     data.append('file',excel);
-    return this.http.post(`${this.env.api}/listePostulant/create/${libelle}/${nombre}`,data);
+    return this.http.post(`${this.env.api}/listePostulant/create/${libelle}/${nombre}/${libelleTirage}`,data);
   }
 
    //methode pour la recuperation des postulants tirés d'un tirage
@@ -31,9 +31,9 @@ export class TirageService {
   }
 
   //methode pour la création d'un tirage
-  Faire(libelle:String,nombre:Number):Observable<any>{
+  Faire(libelle:String,nombre:Number,libelleTirage:String):Observable<any>{
 
-    return this.http.get(`${this.env.api}/trie/${libelle}/${nombre}`);
+    return this.http.get(`${this.env.api}/trie/${libelle}/${nombre}/${libelleTirage}`);
   }
 
 }

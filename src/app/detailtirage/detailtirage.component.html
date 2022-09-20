@@ -14,7 +14,8 @@
             <div class="theTitre">
                 <h2>{{tirage.libelle}}</h2>
                 <p>
-                    {{tirage.date}}
+                    {{tirage.date |date:"yyyy-MM-dd - H:m:s" }}
+
                 </p>
             </div>
         </div>
@@ -23,7 +24,8 @@
             <div class="details">
                 <div class="topnav">
                     <div class="retour-liste">
-                        <a (click)="back()"><p><i class="fa fa-hand-o-left" style="font-size:36px"></i> Retourner sur détails liste</p></a> 
+                        <a (click)="back()"> <p><i class="fa fa-hand-o-left" style="font-size:36px"></i> Retourner sur la liste</p></a> 
+
                      </div>
                     <div class="search-container">
                       <form action="/action_page.php">
