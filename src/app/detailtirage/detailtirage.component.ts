@@ -13,6 +13,7 @@ export class DetailtirageComponent implements OnInit {
   searchListe:any;
   p:any;
   tirage:any;
+  list:any;
   constructor(public curentLink:ActivatedRoute, public listeService:ListeService,public postulantService:PostulantService,public tirageService:TirageService, private router:Router) { }
 
   ngOnInit(): void {
