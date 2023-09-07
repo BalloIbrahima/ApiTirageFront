@@ -19,7 +19,7 @@
             <div class="theTitre">
                 <h2>{{list.libelle}}</h2>
                 <p>
-                    {{list.date
+                    {{list.date}}
                 </p>
             </div>
         </div>
@@ -38,8 +38,8 @@
             <div class="tirageHistorique">
                 <div class="sousTirageHistorique">
                      <div class="elementHistorique"  *ngFor="let t of list.tirages" [routerLink]="['/detailtirage', t.id]">
-                         <p>{{t.libelle}</p>
-                         <p>{{t.date</p>
+                         <p>{{t.libelle}}</p>
+                         <p>{{t.date}}</p>
                      </div>
                 </div> 
              </div>
