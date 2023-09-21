@@ -3,48 +3,49 @@
     grid-template-columns: 55% 41%;
     column-gap: 4%;
     height: 600px;
-}
-///
-.left{
+  }
+  ///
+  .left{
     border-radius: 15px;
     background-color: #D9D9D9;
     grid-template-rows: 20% 74%;
     row-gap: 3%;
     padding: 5%;
-}
-
-.right{
+  }
+  
+  .right{
     border-radius: 15px;
     background-color: #D9D9D9;
     grid-template-rows: 20% 74%;
     row-gap: 3%;
     padding: 1.5%;
-}
-
-///////
-.containerResponsive{
+  }
+  
+  ///////
+  .containerResponsive{
     display: grid;
     grid-template-columns: 55% 41%;
     column-gap: 4%;
     height: 600px;
     display: none;
-}
-@media only screen and (max-width: 755px) {
+  }
+  @media only screen and (max-width: 755px) {
     .container{
         display: none;
     }
-
+  
     .containerResponsive{
         display: block;
     }
-
+  
     .left{
         height: 500px;
     }
-
+  
     .right{
         height: 500px;
     }
-
-
-}
+  
+  
+  }
+  
