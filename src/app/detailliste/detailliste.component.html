@@ -7,11 +7,11 @@
     <title>Document</title>
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"> 
     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"> -->
 </head>
 <body>
     <div class="container">
@@ -25,12 +25,23 @@
         </div>
         
         <section>
-            <div class="details">
+            <!-- <div class="details">
                 <div class="topnav">
                     <p>Historique des tirages sur cette liste</p>
                     <div class="search-container">
                         <input type="text" placeholder="Rehercher postulant.." [(ngModel)]="searchText">
                         <button type="submit"><i class="fa fa-search"></i></button>
+                    </div>
+                  </div>
+            </div> -->
+            <div class="details">
+                <div class="topnav">
+                    <p>Historique des tirages sur cette liste</p>
+                    <div class="search-container">
+                      <form action="/action_page.php">
+                        <input type="text" placeholder="Rehercher postulant.." name="search" [(ngModel)]="searchText">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                      </form>
                     </div>
                   </div>
             </div>
@@ -41,7 +52,8 @@
                          <p>{{t.libelle}}</p>
                          <p>{{t.date}}</p>
                      </div>
-                </div> 
+                </div>
+                <input type="button" value="Voir Plus" class="btnPlusListe">
              </div>
         </section>
         
