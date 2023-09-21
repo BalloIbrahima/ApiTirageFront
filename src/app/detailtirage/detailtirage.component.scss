@@ -23,6 +23,7 @@
     font-size: 2em;
     font-weight: 600;
     color: white;
+
 }
 .theTitre h2{
     margin-left: 70px;
@@ -30,6 +31,7 @@
     font-size: 3em;
     font-weight: 600;
     color: white;
+
 }
 .topnav .retour-liste{
   transition: 0.6s all;
@@ -119,19 +121,11 @@ table td{
     overflow: hidden;
     width: 100%;
   }
-.topnav p i{
-    margin-right: 15px;
-  }
-  .topnav .retour-liste{
-    transition: 0.6s all;
+.topnav p{
+    margin-left: 95px;
   }
   
-.topnav .retour-liste:hover{
-  margin-left: 15px;
-  cursor: pointer;
-}
   .topnav p {
-    margin-left: 110px;
     float: left;
     display: block;
     color: black;
