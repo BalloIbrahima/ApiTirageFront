@@ -24,15 +24,9 @@
         </div>
         <pagination-controls (pageChange)="p = $event"></pagination-controls>
 
-            <div class="list">
-                <label id="libelleListe">Liste 1</label>
-                <label id="nbrTirageListe" for="">3 tirages</label>
-            </div>
-
-            <div class="list">
-                <label id="libelleListe">Liste 1</label>
-                <label id="nbrTirageListe" for="">3 tirages</label>
-            </div>
+        <div class="listvide" *ngIf="listeService.liste.length==0">
+            <label>Aucune liste dans la base de donnée</label>
+        </div>
     </div>
 
 
